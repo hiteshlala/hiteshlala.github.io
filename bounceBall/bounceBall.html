@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script></script>
+    </head>
+    
+    <body>     
+        <script src="bounceBall.js">
+        
+        </script>
+        <h1 align="center">Bouncing Ball Box</h1>        
+        <hr/>
+        
+        <div align="center">Choose from 0 to 5 balls and begin bouncing in box</div>
+        
+        <table align="center">
+            <tr><td><input id="numballs" type="number" style="width: 50px" value="1" ></td>
+                <td>
+        <input onclick="bounce()" type="button" value="Bounce Balls" />
+                </td></tr>
+        </table>
+        <div id="msg" align="center" style="color : red"></div>
+        <hr/>
+     
+        <div align="center">
+            <canvas id="box" width="300" height="300" style="border: 2px solid black">
+            </canvas>
+        </div>
+
+        <hr/>  
+        <div align="center"><p>Number of balls has been limited for two reasons:</p><p>1.  to reduce wierd artifacts resulting from multiple object collsions.  Have not yet figured out how to handle those... </p><p>2.  so that inital balls fit on canvas without overlap - about 50 can fit but they behave wieredly</p></div>
+        
+        
+        
+        <hr/>
+        <div><h1>Function summary for Bouncing Ball Box</h1></div>
+
+        <div><h2>Function in html script:</h2>
+            <h3> bounce()</h3>
+                <li>checks to see if number of balls within range</li>
+                <li>calls createBalls() once</li>
+                <li>calls drawBalls() at regular intervals</li>
+
+        </div>
+
+        <div><h2>   Functions in js file:</h2>
+            <h3>createBalls()</h3>
+                <li>    creates the balls making sure that no overlap occurs</li> 
+                <li>    stores balls in document.balls array</li>
+
+            <h3>drawBalls()</h3>
+                <li>draws balls stored in document.balls array</li>
+                <li>calls collideBall()</li>
+                <li>calls collideBall() for each ball<li>
+
+            <h3>rndXY(radius)</h3>
+                <li>returns function that will return a random number in range:</li>
+                <li>from radius to (width or height)-radius</li>
+
+            <h3>Ball(idx, x, y)</h3>
+                <li>is the ball object</li>  
+                <li>stores info about ball x, y, velocity vectors, radius</li>
+
+            <h3>updatePos(ballObj)</h3>
+                <li>moves ball one step by adding velocity vectors to position</li>
+
+            <h3>dist(ball1, ball2)</h3>
+                <li>calculates and returns the distance between ball1 and ball2</li>
+
+            <h3>collideBall(process)</h3>
+                <li>finds balls that are colliding and</li> 
+                <li>runs process() on each ball</li>
+
+            <h3>newTrajectory(ball1, ball2)</h3>
+                <li>calculates after collision trajectory for ball1 and ball2</li>
+
+                <h3>collideWall(ballObj)</h3>
+                <li>check if ballObj collides with wall</li>
+                <li>if does change trajectory of ballObj to bounce</li>
+                <li>else do nothing</li>
+
+        </div>    
+
+        <p><a href="index.html">Back</a> </p>     
+        
+    </body>
+    
+    <script>
+        function bounce(){
+            var test = Number(document.getElementById("numballs").value);
+            if(test >= 0 && test <= 5 ){
+                document.getElementById("msg").innerHTML = "";
+                createBalls();
+                setInterval(drawBalls,20); // draw canvas every XXX ms
+            }
+            else{
+                document.getElementById("msg").innerHTML = "Number of balls has to be in range 0 to 5.  Please try again!";
+            }
+        }
+    </script>
+    
+</html>

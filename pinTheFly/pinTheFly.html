@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script></script>
+    </head>
+    
+    <style type="text/css">        
+        #box { background:url(wall3.jpg) }
+    </style>
+    
+    
+    <body>     
+        <script src="pinTheFly.js"></script>
+        
+        <h1 align="center"><img src='fly11.png'>&nbsp;&nbsp;
+            <img src='swat1.cur'>&nbsp;&nbsp;
+            <img src='fly12.png'>&nbsp;&nbsp;
+            Swat The Flies&nbsp;&nbsp;
+            <img src='fly12.png'>&nbsp;&nbsp;
+            <img src='swat2.cur'>&nbsp;&nbsp;
+            <img src='fly11.png'></h1>        
+        <hr/>
+        
+        <div align="center">Try to Swat Those Pesky Flies and Pin Them to The Wall Before They Escape!!</div>
+        
+        <table align="center">
+            <tr><td>
+                    <input id="numflies" type="number" style="width: 50px" value="50" >
+                </td>
+                <td>
+                    <input onclick="pinflies()" type="button" value="Start Swatting" />
+                </td>
+            </tr>
+        </table>
+        <hr/>
+        <div align="center">
+            <table width="700">
+                <tr><th>Original Flies:</th><th id="flyCount">0</th>
+                    <th>Swatted Flies:</th><th id="pinned">0</th>
+                    <th>Escaped Flies:</th><th id="escaped">0</th>
+                </tr></table>
+        </div>
+        
+     
+        <div align="center">
+            <canvas  id="box" width="700" height="350" style="border: 2px solid black;">
+            </canvas>
+        </div>
+                
+        <hr/>
+
+    </body>
+    
+    <script>
+        // add event listener for clicking on canvas
+        var canv = document.getElementById('box');
+        canv.addEventListener('click', didISwatAFly);
+        canv.addEventListener('mouseup', flySwattUp);
+        canv.addEventListener('mousedown', flySwattDown);
+        
+        // add sounds for swatting and for buzzing
+        var sndswat = new Audio('whip2.mp3'),
+            sndbuzz = new Audio('flyBuzzing1.mp3'),
+            sndsquish = new Audio('scream1.mp3');
+            //sndsquish = new Audio('squish1.mp3');
+        
+        
+        // set up document variables
+        document.pinned = [];
+        document.flies = [];
+        document.escaped = 0;
+        
+        // set up cursor image to change to swatter when over canvas
+        document.getElementById("box").style.cursor = "url('swat1.cur'), auto";        
+        
+        // reset the game variables and start playing
+        function pinflies(){ 
+            document.pinned = [];
+            document.flies = [];
+            document.escaped = 0;
+            document.getElementById('flyCount').innerHTML = document.getElementById("numflies").value;
+            createFlies();
+            setInterval(drawCanvas,20); // draw canvas every XXX ms
+            
+        }
+        
+        // gets the x and y co-ordinates of cursor and passes it on to swatFly which
+        //   checks to see if any fly was close to it
+        function didISwatAFly(event){
+            swatFly(event.x, event.y);         
+        } 
+        
+        // sets the curssor image and resets swat sound
+        function flySwattUp(){
+            document.getElementById("box").style.cursor = "url('swat1.cur'), auto";
+            sndswat.currentTime = 0;
+        }
+        
+        // sets the cursor image and starts swat sound
+        function flySwattDown(){
+            document.getElementById("box").style.cursor = "url('swat2.cur'), auto";
+            sndswat.play();
+        }
+        
+    </script>
+    
+</html>

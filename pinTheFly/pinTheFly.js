@@ -36,7 +36,7 @@ function drawCanvas(){
 function drawFlies(ctx){ 
     // load image of living fly
     var img = new Image();
-    img.src = "fly11.png";    
+    img.src = "images/fly11.png";    
     
     // draw each fly and update its position
     document.flies.forEach(function(val){       
@@ -58,7 +58,7 @@ function drawFlies(ctx){
 function drawSwatted(ctx){
     // load image of dead fly
     var img = new Image();
-    img.src = "fly12.png";    
+    img.src = "images/fly12.png";    
     
     // draw each fly
     document.pinned.forEach(function(val){       

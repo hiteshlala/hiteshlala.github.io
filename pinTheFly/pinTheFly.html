@@ -5,20 +5,20 @@
     </head>
     
     <style type="text/css">        
-        #box { background:url(wall3.jpg) }
+        #box { background:url(images/wall3.jpg) }
     </style>
     
     
     <body>     
         <script src="pinTheFly.js"></script>
         
-        <h1 align="center"><img src='fly11.png'>&nbsp;&nbsp;
-            <img src='swat1.cur'>&nbsp;&nbsp;
-            <img src='fly12.png'>&nbsp;&nbsp;
+        <h1 align="center"><img src='images/fly11.png'>&nbsp;&nbsp;
+            <img src='images/swat1.cur'>&nbsp;&nbsp;
+            <img src='images/fly12.png'>&nbsp;&nbsp;
             Swat The Flies&nbsp;&nbsp;
-            <img src='fly12.png'>&nbsp;&nbsp;
-            <img src='swat2.cur'>&nbsp;&nbsp;
-            <img src='fly11.png'></h1>        
+            <img src='images/fly12.png'>&nbsp;&nbsp;
+            <img src='images/swat2.cur'>&nbsp;&nbsp;
+            <img src='images/fly11.png'></h1>        
         <hr/>
         
         <div align="center">Try to Swat Those Pesky Flies and Pin Them to The Wall Before They Escape!!</div>
@@ -59,9 +59,9 @@
         canv.addEventListener('mousedown', flySwattDown);
         
         // add sounds for swatting and for buzzing
-        var sndswat = new Audio('whip2.mp3'),
-            sndbuzz = new Audio('flyBuzzing1.mp3'),
-            sndsquish = new Audio('scream1.mp3');
+        var sndswat = new Audio('sounds/whip2.mp3'),
+            sndbuzz = new Audio('sounds/flyBuzzing1.mp3'),
+            sndsquish = new Audio('sounds/scream1.mp3');
             //sndsquish = new Audio('squish1.mp3');
         
         
@@ -71,7 +71,7 @@
         document.escaped = 0;
         
         // set up cursor image to change to swatter when over canvas
-        document.getElementById("box").style.cursor = "url('swat1.cur'), auto";        
+        document.getElementById("box").style.cursor = "url('images/swat1.cur'), auto";        
         
         // reset the game variables and start playing
         function pinflies(){ 
@@ -92,13 +92,13 @@
         
         // sets the curssor image and resets swat sound
         function flySwattUp(){
-            document.getElementById("box").style.cursor = "url('swat1.cur'), auto";
+            document.getElementById("box").style.cursor = "url('images/swat1.cur'), auto";
             sndswat.currentTime = 0;
         }
         
         // sets the cursor image and starts swat sound
         function flySwattDown(){
-            document.getElementById("box").style.cursor = "url('swat2.cur'), auto";
+            document.getElementById("box").style.cursor = "url('images/swat2.cur'), auto";
             sndswat.play();
         }
         

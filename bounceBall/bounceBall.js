@@ -53,7 +53,7 @@ function drawBalls(){
     var box =document.getElementById("box"),
         ctx = box.getContext('2d');
     
-    ctx.fillStyle = "red";  // color of balls
+    ctx.fillStyle =  '#5353c6';//"red";  // color of balls
     
     // clear canvas
     ctx.clearRect(0,0,document.getElementById("box").width,
@@ -62,8 +62,8 @@ function drawBalls(){
     // draw each ball
     document.balls.forEach(function(val){
         ctx.beginPath();
-        ctx.arc(val.x,val.y,15,0,2*Math.PI);
-        ctx.fill();    
+        ctx.arc(val.x, val.y, 15, 0, 2 * Math.PI);
+        ctx.fill();
     });
     
     // check if balls are colliding with wall and balls    

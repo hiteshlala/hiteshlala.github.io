@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script></script>
+        <link rel="stylesheet" type="text/css" href="pinTheFly.css">
     </head>
     
-    <style type="text/css">        
-        #box { background:url(images/wall3.jpg) }
-    </style>
     
     
     <body>     
@@ -46,6 +43,10 @@
             <canvas  id="box" width="700" height="350" style="border: 2px solid black;">
             </canvas>
         </div>
+        <div class='result hide'>
+            <p>Swatted Flies: <div><img src='images/fly11.png'> <div id='finalSwatted'></div></div></p>
+            <p>Escaped Flies: <div><img src='images/fly12.png'> <div id='finalEscaped'></div></div></p>
+        </div>
                 
         <hr/>
         <p><a href="../index.html">Back</a> </p> 
@@ -74,13 +75,16 @@
         document.getElementById("box").style.cursor = "url('images/swat1.cur'), auto";        
         
         // reset the game variables and start playing
+        var game;
         function pinflies(){ 
             document.pinned = [];
             document.flies = [];
             document.escaped = 0;
+            var result = document.getElementsByClassName('result');
+            result[0].setAttribute('class', 'result hide');
             document.getElementById('flyCount').innerHTML = document.getElementById("numflies").value;
             createFlies();
-            setInterval(drawCanvas,20); // draw canvas every XXX ms
+            game = setInterval(drawCanvas,20); // draw canvas every XXX ms
             
         }
         

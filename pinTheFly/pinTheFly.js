@@ -6,15 +6,25 @@ function createFlies(){
         // create flies only enters loop if 1 or more flies
         for(var i = 0; i < num; i++){
             document.flies.push( new Fly(rnd('x'), rnd('y')));
-        }            
+        }
     }
 }
 
 // draw the living and dead flies on canvas
 function drawCanvas(){
+    // check to see if all flies have died
+    if(document.flies.length === 0) {
+        var node = document.getElementsByClassName('result');
+        console.log(node);
+        node[0].setAttribute('class', 'result visible');
+        clearInterval(game);
+        document.getElementById("finalEscaped").innerHTML = document.escaped;
+        document.getElementById("finalSwatted").innerHTML = document.pinned.length;
+    }
+
     // load canvas 
     var box = document.getElementById("box"),
-        ctx = box.getContext('2d');  
+        ctx = box.getContext('2d');
     
     // clear canvas
     ctx.clearRect(0,0,document.getElementById("box").width,
@@ -30,19 +40,20 @@ function drawCanvas(){
     // update game counters
     document.getElementById("escaped").innerHTML = document.escaped;
     document.getElementById("pinned").innerHTML = document.pinned.length;
+    
 }
 
 // draw flies stored in document.flies on canvas
-function drawFlies(ctx){ 
+function drawFlies(ctx){
     // load image of living fly
     var img = new Image();
-    img.src = "images/fly11.png";    
+    img.src = "images/fly11.png";
     
     // draw each fly and update its position
-    document.flies.forEach(function(val){       
-        ctx.drawImage(img, val.x, val.y);        
-        val.update();        
-    }); 
+    document.flies.forEach(function(val){
+        ctx.drawImage(img, val.x, val.y);
+        val.update();
+    });
     
     // if there are flies still alive play buzzing sound
     if(document.flies.length > 0){
@@ -51,18 +62,18 @@ function drawFlies(ctx){
     }
     else {
         sndbuzz.pause();
-    };
+    }
 }
 
 // draw the swatted flies stored in document.pinned
 function drawSwatted(ctx){
     // load image of dead fly
     var img = new Image();
-    img.src = "images/fly12.png";    
+    img.src = "images/fly12.png";
     
     // draw each fly
-    document.pinned.forEach(function(val){       
-        ctx.drawImage(img, val.x, val.y);            
+    document.pinned.forEach(function(val){
+        ctx.drawImage(img, val.x, val.y);
     });
 }
 
@@ -126,7 +137,7 @@ function swatFly(x,y){
             sndsquish.currentTime = 0;
             sndsquish.play();
         }
-    });    
+    });
 }
 
 
@@ -146,5 +157,5 @@ function escaped(fl){
     else if(fl.y <= 0 || fl.y >= document.getElementById("box").height){
         fl.gone();
         document.escaped++;
-    }  
+    }
 }

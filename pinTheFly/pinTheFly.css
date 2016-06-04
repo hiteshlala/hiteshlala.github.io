@@ -22,3 +22,12 @@
 .visible {
   visibility: visible;
 }
+
+input {
+  font: inherit;
+  color: #5353c6;
+}
+
+#numflies {
+  width: 50px;
+}

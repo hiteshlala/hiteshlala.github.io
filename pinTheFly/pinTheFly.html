@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="./../main.css">
         <link rel="stylesheet" type="text/css" href="pinTheFly.css">
     </head>
     
@@ -19,16 +20,9 @@
         <hr/>
         
         <div align="center">Try to Swat Those Pesky Flies and Pin Them to The Wall Before They Escape!!</div>
-        
-        <table align="center">
-            <tr><td>
-                    <input id="numflies" type="number" style="width: 50px" value="50" >
-                </td>
-                <td>
-                    <input onclick="pinflies()" type="button" value="Start Swatting" />
-                </td>
-            </tr>
-        </table>
+        <div align='center'>
+            <p><input id="numflies" type="number" value="50" > <input onclick="pinflies()" type="button" value="Start Swatting" /></p> 
+        </div>
         <hr/>
         <div align="center">
             <table width="700">
@@ -37,8 +31,6 @@
                     <th>Escaped Flies:</th><th id="escaped">0</th>
                 </tr></table>
         </div>
-        
-     
         <div align="center">
             <canvas  id="box" width="700" height="350" style="border: 2px solid black;">
             </canvas>
@@ -46,10 +38,9 @@
         <div class='result hide'>
             <p>Swatted Flies: <div><img src='images/fly12.png'> <div id='finalSwatted'></div></div></p>
             <p>Escaped Flies: <div><img src='images/fly11.png'> <div id='finalEscaped'></div></div></p>
-        </div>
-                
+        </div> 
         <hr/>
-        <p><a href="../index.html">Back</a> </p> 
+        <p align='center'><a href="../index.html">Back To Projects Page</a> </p> 
     </body>
     
     <script>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1.0" />
+  <title> Hitesh Lala </title>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+  <div class="mainwrapper">
+    <header>
+      <div class="header-wrap">
+        <div class="header-img">
+          <img alt="logo" src="assets/favicon.png" type="image/png">
+        </div>
+        <div class="header-txt"> Hitesh Lala </div>
+        <div class="spacer"></div>
+        <div class="header-dropdown-menu hide" id="dropdown"></div>
+        <div class="header-dropdown" id="barsicon">
+          <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20">
+            <path id="svg-bars-path"
+              d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+            </path>
+          </svg>
+        </div>
+        <div class="header-navigate" id="navigate"></div>
+      </div>
+    </header>
+    <div class="page">
+      <div class="page-content">
+
+        <div class="bio">
+          <div class="bio-image"> <img src="assets/photo.JPG" class="my-portrait"> </div>
+          <div class="bio-text">
+            <p> I am a Software Engineer and have built a number applications using diverse technologies across the full stack. </p> 
+            <p> My approach to solving a problem is to break it down into smaller and smaller parts and tackle each independently, preferably in a modular way. </p>
+            <p> Creating impactful user experiences by utilizing data visualizations and intuitive interfaces is a strong design focus in my work. </p>
+          </div>
+        </div>
+      
+        <div>
+          <p> In my free time I like to think, read, build stuff, go climbing, play music, and be lazy. </p>
+          <p> Things I seem to think about a lot... </p>
+          <ul>
+            <li> Freedom </li>
+            <li> Trees </li>
+            <li> Barter System </li>
+            <li> Do I Own My Time? </li>
+            <li> Democracy </li>
+          </ul>
+          <p><a href='assets/HiteshLalaResume.pdf'> Here is my resume.</a></p>
+        </div>
+      
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <footer>
+      <div>
+        <p>
+          <a href="https://hiteshlala.com"> &copy; Hitesh Lala</a> <span id="year"></span>
+        </p>
+      </div>
+    </footer>
+
+    <script language="javascript">
+      window.onload = () => {
+        const date = document.getElementById('year');
+        const drop = document.getElementById('dropdown');
+        const nav = document.getElementById('navigate');
+        const barsicon = document.getElementById('barsicon');
+
+        date.innerText = `2016 - ${new Date().getFullYear()}`;
+
+        const path = window.location.pathname.split('/');
+        const page = path[path.length - 1];
+
+        const menu = [{
+            display: 'About',
+            link: 'about.html',
+            html: 'about.html'
+          },
+          {
+            display: 'Code',
+            link: 'index2.html',
+            html: 'index2.html'
+          }
+        ];
+
+        menu.forEach(function (m) {
+          const menuitem = function (styleclass) {
+            let style = page === m.html ? 'color:#525564;' : '';
+            const adrop = document.createElement('a');
+            adrop.setAttribute('href', m.link);
+            adrop.setAttribute('style', style);
+            adrop.setAttribute('class', styleclass);
+            adrop.innerText = m.display;
+            return adrop;
+          };
+
+          drop.appendChild(menuitem('nav-item-drop'));
+          nav.appendChild(menuitem('nav-item'));
+        });
+
+        barsicon.onclick = function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          const cssclass = drop.classList;
+          let found = false;
+          for (let i = 0; i < cssclass.length; i++) {
+            found = found || cssclass[i] === 'hide';
+          }
+          if (found) {
+            cssclass.remove('hide');
+          } else {
+            cssclass.add('hide');
+          }
+        };
+
+        barsicon.ontouchstart = function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleDropdown();
+        };
+
+        window.addEventListener('resize', function () {
+          drop.classList.add('hide');
+        });
+      };
+    </script>
+
+  </div>
+</body>
+
+</html>

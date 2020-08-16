@@ -1,0 +1,58 @@
+.bb-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.bb-header {
+  height: 50px;
+  margin: 0 auto;
+  line-height: 50px;
+  border-bottom: solid 0.5px red;
+  max-width: 720px;
+  line-height: 50px;
+  font-size: 20px;
+  text-align: center;
+}
+.bb-header h1 {
+  font-size: 20px;
+}
+
+.bb-center {
+  text-align: center;
+}
+
+.bb-center p {
+  margin: 15px auto;
+}
+
+input {
+  font: inherit;
+  color: #5353c6;
+}
+
+hr {
+  border-bottom: solid 0.5px red;
+}
+
+ul {
+    margin-bottom: 2%;
+}
+
+li {
+  margin-left: 2%;
+}
+
+.bb-space {
+  margin-left: 5%;
+}
+.bb-space h1 {
+  font-size: 20px;
+}
+
+.bb-space h3 {
+  font-size: 15px;
+}
+
+canvas {
+  border: 2px solid red;
+}

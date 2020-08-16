@@ -231,26 +231,6 @@ footer {
   margin: 0 auto;
 }
 
-.quote {
-  border: 1px solid #c25b56;
-  border-radius: 5px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  background-color: #fef6eb;
-}
-.quote p {
-  padding: 5px;
-}
-.quote .quote-saying {
-  margin: 5px;
-  color: #c25b56;
-}
-.quote .quote-author {
-  font-size: 10px;
-  text-align: right;
-  margin-top: 0px;
-}
-
 .bio {
   margin-top: 5px;
   width: 100%;

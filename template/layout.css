@@ -19,8 +19,8 @@ header {
   height: 50px;
   background-color: #fef6eb;
   margin: 0px;
-  width: 100vw;
-  border-bottom: #c25b56 solid 1px;
+  width: 100%;
+  border-bottom: 1px solid #c25b56;
 }
 
 .header-wrap {

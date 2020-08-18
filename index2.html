@@ -154,7 +154,7 @@
           nav.appendChild(menuitem('nav-item'));
         });
 
-        barsicon.onclick = function (e) {
+        function toggleDropdown (e) {
           e.preventDefault();
           e.stopPropagation();
           const cssclass = drop.classList;
@@ -169,10 +169,12 @@
           }
         };
 
+        barsicon.onclick = toggleDropdown;
+
         barsicon.ontouchstart = function (e) {
           e.preventDefault();
           e.stopPropagation();
-          toggleDropdown();
+          toggleDropdown(e);
         };
 
         window.addEventListener('resize', function () {

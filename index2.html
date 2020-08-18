@@ -172,8 +172,6 @@
         barsicon.onclick = toggleDropdown;
 
         barsicon.ontouchstart = function (e) {
-          e.preventDefault();
-          e.stopPropagation();
           toggleDropdown(e);
         };
 

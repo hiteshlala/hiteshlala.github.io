@@ -9,14 +9,26 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  min-height: 100vh;
 }
+
+html {
+  background-color: #fef6eb;
+}
+
 body {
   font-size: 15px;
   font: 300 17px/22px "Lato", "Open Sans", "Verdana";
   color: #525564;
   line-height: 1.2em;
+  /* background-image: url('../assets/fractal_1.png'); */
+  /* background: linear-gradient(black, #9198e5); */
+  background: linear-gradient(black, #e66465);
+  /* background: linear-gradient(#e66465, #9198e5); */
+  background-attachment: fixed;
+  background-size: 100% 100%;
 }
+
 .mainwrapper {
   min-height: 100vh;
   display: flex;
@@ -186,19 +198,31 @@ footer {
 
 .project {
   max-width: 350px;
-  border: 1px solid #c25b56;
+  border: 1px solid #fef6eb;
+  /* border: 1px solid #c25b56; */
   margin: 10px;
   padding: 3px;
   text-align: center;
-  color: #c25b56;
+  /* color: #c25b56; */
+  color: #fef6eb;
   border-radius: 3px;
+  /* background-color: #525564; */
+  /* background-color: #fef6eb; */
+  /* background: linear-gradient(#fef6eb, transparent 70%); */
+  /* background-image: linear-gradient(to right, #7927b2, #fb3182, transparent 90%); */
+  /* background: linear-gradient(to top, #fef6eb, transparent 99%); */
+  /* background: linear-gradient(to top, #fef6eb); */
+  background: linear-gradient( to top, #525564, transparent 100%);
 }
 
 .project:hover {
-  color: #525564;
+  /* color: #525564; */
+  /* color:  #fef6eb; */
   cursor: pointer;
   border-color: #525564;
-  background-color: #fef6eb;
+  /* background-color: #fef6eb; */
+  background-color: #525564;
+  mix-blend-mode: difference; 
 }
 
 .project img {
@@ -229,6 +253,15 @@ footer {
   max-width: 80%;
   min-width: 230px;
   margin: 0 auto;
+  color: #fef6eb;
+}
+
+.resume {
+  color:  #e7bdbb; 
+}
+
+.resume:hover {
+  color: #c25b56; 
 }
 
 .bio {

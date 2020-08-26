@@ -213,6 +213,7 @@ footer {
   /* background: linear-gradient(to top, #fef6eb, transparent 99%); */
   /* background: linear-gradient(to top, #fef6eb); */
   background: linear-gradient( to top, #525564, transparent 100%);
+  transition: all 1s ease-out;
 }
 
 .project:hover {

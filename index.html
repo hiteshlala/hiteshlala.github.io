@@ -1,156 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="author" content="Hitesh Lala">
-    <!-- for web site icon -->
-    <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="images/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="manifest" href="/images/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
 
-    <title>A Collection of Projects</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1.0" />
+  <title> Hitesh Lala </title>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/layout.css">
+</head>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-
-  </head>
-
-  <body>
-
-    <div class="jumbotron">
-      <div class="container">
-        <h1 class='text-center'>A Collection of Projects</h1>
-        <h4 class='text-center'>by Hitesh</h4>
-        <!-- <p>
-        Some coding projects I enjoyed working on... 
-        </p> -->
+<body>
+  <div class="mainwrapper">
+    <header>
+      <div class="header-wrap">
+        <div class="header-img">
+          <img alt="logo" src="assets/favicon.png" type="image/png">
+        </div>
+        <div class="header-txt"> Hitesh Lala </div>
+        <div class="spacer"></div>
+        <div class="header-dropdown-menu hide" id="dropdown"></div>
+        <div class="header-dropdown" id="barsicon">
+          <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20">
+            <path id="svg-bars-path"
+              d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+            </path>
+          </svg>
+        </div>
+        <div class="header-navigate" id="navigate"></div>
       </div>
+    </header>
+    <div class="page">
+
+      <div class="project" onclick="window.location.assign('/fractals/index.html')">
+        <img src="assets/spirals.jpg" class="proj-img-wide">
+        <h2>Fractal Exploration</h2>
+        <p>
+          Fractal image creator built with React, TypeScript, and Less.
+          Generate and download images some kinds of fractals including the Julia and Mandelbrot sets.
+        </p>
+      </div>
+
+      <div class="project" onclick="window.location.assign('/hex-flex-create/index.html')">
+        <img src="assets/hexflexcreate.png" class="proj-img-wide">
+        <h2>Hexaflexagon Creator</h2>
+        <p>
+          A tool to create hexaflexagon templates.
+          Use the symmetry sketcher to create art to put on the faces of the hexaflexagon.
+          This is a client app built with JavaScript, HTML5, and CSS.
+        </p>
+      </div>
+
+      <div class="project" onclick="window.location.assign('/symsketch/index.html')">
+        <img src="assets/symsketch.png" class="proj-img-tall">
+        <h2>Symmetry Sketcher</h2>
+        <p>
+          A touch supported sketcher for creating symmetric drawings.
+          Build using HTML, CSS, and JavaScript.
+        </p>
+      </div>
+
+      <div class="project" onclick="window.location.assign('http://temperature.hiteshlala.info')">
+        <img src="assets/temperature.png" class="proj-img-wide">
+        <h2>Remote Sensing</h2>
+        <p>
+          Loging remote temperatures and display collected data on a web page.
+          Built with JavaScript, Chartist, HTML, Koa and MongoDB.
+          Sensor built with ESP8266 and programmed using Arduino IDE.
+        </p>
+      </div>
+
+      <div class="project" onclick="window.location.assign('http://conway.hiteshlala.info')">
+        <img src="assets/conway.png" class="proj-img-wide">
+        <h2>Conway Game</h2>
+        <p>
+          An application to explore Conways Game of Life a cellular automation.
+          Built with AngularJS, HTML Canvas, Express, and SQLite.
+        </p>
+      </div>
+
+      <div class="project" onclick="window.location.assign('/swat-the-flies/index.html')">
+        <img src="assets/pinTheFly.png" class="proj-img-wide">
+        <h2>Swat The Flies</h2>
+        <p>An interactive web game built with JavaScript, HTML, and HTML Canvas.</p>
+      </div>
+
+      <div class="project" onclick="window.location.assign('bounce-the-ball/index.html')">
+        <img src="assets/bounceBall.png" class="proj-img-tall">
+        <h2>Bounce The Ball</h2>
+        <p>A visual simulation of two body collisions built with JavaScript, HTML, and a custom vector algorithm.</p>
+      </div>
+
+      <div class="project" onclick="window.location.assign('/elevator-sim/index.html')">
+        <img src="assets/elevatorsim.png" class="proj-img-tall">
+        <h2>Elevator Simulation</h2>
+        <p>A toy problem simulating an elevator panel built with JavaScript, HTML, and jQuery.</p>
+      </div>
+
+      <div class="project" onclick="window.location.assign('/sierpinski-triangles/index.html')">
+        <img src="assets/sierpinskitriangles.png" class="proj-img-wide">
+        <h2>Sierpinski Triangles</h2>
+        <p>Web visualization using D3.js and jQuery demonstrating the iterative generation of this fractal image.</p>
+      </div>
+
+      <div class="project" onclick="window.location.assign('/spirograph/index.html')">
+        <img src="assets/spirograph.png" class="proj-img-tall">
+        <h2>Spirograph</h2>
+        <p>Spirograph drawing tool built using JavaScript, HTML, CSS.</p>
+      </div>
+
     </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <a href="/fractals/index.html"> 
-            <img src="images/spirals.jpg" width='100%'> 
-            <h2>Fractal Image Creator</h2>
-          </a>
-          <p>
-            Fractal image creator built with React, TypeScript, and Less.
-            Generate and download images of the Julia and Mandelbrot sets.
-          </p>
-        </div>
-        <div class="col-md-4">
-          <a href="/hex-flex-create/index.html"> 
-            <img src="images/hexflexcreate.png" width='100%'> 
-            <h2>Hexaflexagon Creator</h2>
-          </a>
-          <p>
-            A tool to create hexaflexagon templates.
-            Use the symmetry sketcher to create art to put on the hexaflexagon.  
-            This is a client app built with JavaScript, HTML5, and CSS.
-          </p>
-        </div>
-        <div class="col-md-4">
-          <a href="/symsketch/index.html"> 
-            <img src="images/symsketch.png" width='100%'> 
-            <h2>Symmetry Sketcher</h2>
-          </a>
-            <p>A symmetry sketcher similar to a kaleidoscope.</p>
-        </div>
+    <div class="spacer"></div>
+
+    <footer>
+      <div>
+        <p>
+          <a href="https://hiteshlala.com"> &copy; Hitesh Lala</a> <span id="year"></span>
+        </p>
       </div>
+    </footer>
 
-      <div class="row">
-        <div class="col-md-4">
-          <a href="http://temperature.hiteshlala.info"> 
-            <img src="images/temperature.png" width='100%'> 
-            <h2>Remote Sensing</h2>
-          </a>
-            <p>Loging remote temperatures and display collected data on a web page.
-            Built with JavaScript, Chartist, HTML, Koa2 and MongoDB.
-            Sensor built with ESP8266 and programmed using Arduino IDE.</p>
-        </div>
-        <div class="col-md-4">
-          <a href="http://conway.hiteshlala.info"> 
-            <img src="images/conwaygame.png" width='100%'> 
-            <h2>Conway Game</h2>
-          </a>
-          <p>
-            An application to explore Conways Game of Life a cellular automation. 
-            Built with AngularJS, D3.js, Express, and MongoDB.
-          </p>
-        </div>
-        <div class="col-md-4">
-          <a href="pinTheFly/pinTheFly.html"> 
-            <img src="images/swatthefly.png" width='100%'> 
-            <h2>Swat The Fly</h2>
-          </a>
-          <p>An interactive web game built with JavaScript and HTML.</p>
-        </div>
-      </div>
+    <script language="javascript">
+      window.onload = () => {
+        const date = document.getElementById('year');
+        const drop = document.getElementById('dropdown');
+        const nav = document.getElementById('navigate');
+        const barsicon = document.getElementById('barsicon');
 
-      <div class="row">
-        <div class="col-md-4">
-          <a href="bounceBall/bounceBall.html"> 
-            <img src="images/bouncetheball.png" width='100%'> 
-            <h2>Bounce The Ball</h2>
-          </a>
-          <p>A visual simulation of two body collisions built with JavaScript, HTML, and a custom vector algorithm.</p>
-       </div>
-        <div class="col-md-4">
-          <a href="/elevator-sim/index.html"> 
-            <img src="images/elevatorsim.png" width='100%'> 
-            <h2>Elevator Simulation</h2>
-          </a>
-          <p>A toy problem simulating an elevator panel built with JavaScript, HTML, and jQuery.</p>
-        </div>
-        <div class="col-md-4">
-          <a href="/sierpinski-triangles/index.html"> 
-            <img src="images/sierpinskitriangles.png" width='100%'> 
-            <h2>Sierpinski Triangles</h2>
-          </a>
-            <p>Web visualization using D3.js and jQuery demonstrating the iterative generation of this fractal image.</p>
-        </div>
-        
-      </div>
+        date.innerText = `2016 - ${new Date().getFullYear()}`;
 
-      <div class="row">
-        <div class="col-md-4">
-          <a href="/spirograph/index.html"> 
-            <img src="images/spirograph.png" width='100%'> 
-            <h2>Spirograph</h2>
-          </a>
-            <p>Spirograph drawing tool built using JavaScript, HTML, CSS.</p>
-        </div>
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-4">
-        </div>
-      </div>
+        const path = window.location.pathname.split('/');
+        const page = path[path.length - 1];
 
-      <hr>
+        const menu = [{
+            display: 'About',
+            link: 'about.html',
+            html: 'about.html'
+          },
+          {
+            display: 'Code',
+            link: 'index2.html',
+            html: 'index2.html'
+          }
+        ];
 
-      <footer>
-        <p class='text-center'><a href='HiteshLalaResume.pdf'> Hitesh's Resume</a></p>
-      </footer>
-    
-    </div>
-  
-  </body>
+        menu.forEach(function (m) {
+          const menuitem = function (styleclass) {
+            let style = page === m.html ? 'color:#525564;' : '';
+            const adrop = document.createElement('a');
+            adrop.setAttribute('href', m.link);
+            adrop.setAttribute('style', style);
+            adrop.setAttribute('class', styleclass);
+            adrop.innerText = m.display;
+            return adrop;
+          };
+
+          drop.appendChild(menuitem('nav-item-drop'));
+          nav.appendChild(menuitem('nav-item'));
+        });
+
+        function toggleDropdown (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          const cssclass = drop.classList;
+          let found = false;
+          for (let i = 0; i < cssclass.length; i++) {
+            found = found || cssclass[i] === 'hide';
+          }
+          if (found) {
+            cssclass.remove('hide');
+          } else {
+            cssclass.add('hide');
+          }
+        };
+
+        barsicon.onclick = toggleDropdown;
+
+        barsicon.ontouchstart = function (e) {
+          toggleDropdown(e);
+        };
+
+        window.addEventListener('resize', function () {
+          drop.classList.add('hide');
+        });
+      };
+    </script>
+
+  </div>
+</body>
+
 </html>

@@ -6,6 +6,9 @@ Currently: [hiteshlala.com](https://hiteshlala.com)
 
 ## Updates
 
+10 Oct 2021
+  - added Tessellator project
+
 7 Aug 2021
   - remove unused assets
   - remove orig sierpinski triangle from homepage

@@ -6,6 +6,9 @@ Currently: [hiteshlala.com](https://hiteshlala.com)
 
 ## Updates
 
+27 Nov 2022
+  - added link to Asteroids game
+
 16 Oct 2022
   - added Flood-Fill
 
